@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Container from './components/Container';
 import PhonebookView from './views/PhonebookView';
 import HomeView from './views/HomeView';
@@ -14,42 +14,27 @@ import PublicRoute from "./components/PublicRoute";
 import './App.css';
 
 export default function App() {
-const dispatch = useDispatch();
 const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
   useEffect(
     () => {
-      dispatch(authOperations.fetchCurrentUser());
-    }, [dispatch]
+      authOperations.fetchCurrentUser();
+    }
   );
 
   return (
     !isFetchingCurrentUser && (
-      <>
+    <>
+    <Container>
       <AppBar />
-      <Container>
-        
         <Switch>
-           
-          <PublicRoute exact path="/">
-            <HomeView />
-          </PublicRoute>
-
-          <PublicRoute exact path="/register" restricted>
-            <RegisterView />
-          </PublicRoute>
-
-          <PublicRoute exact path="/login" restricted>
-            <LoginView />
-          </PublicRoute>
-
-          <PrivatRoute >
-            <PhonebookView path="/contacts" />
-          </PrivatRoute>
-
+          <PublicRoute exact path="/"><HomeView /></PublicRoute>
+          <PublicRoute exact path="/register" restricted><RegisterView /></PublicRoute>
+          <PublicRoute exact path="/login" restricted><LoginView /></PublicRoute>
+          <PrivatRoute ><PhonebookView path="/contacts" /></PrivatRoute>
         </Switch>
-      </Container>
-</>
+    </Container>
+    </>
     )
   );
 }

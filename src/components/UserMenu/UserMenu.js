@@ -14,8 +14,12 @@ const styles = {
   },
   name: {
     fontWeight: 700,
-    marginRight: 12,
-    color: '#DB7093',
+    marginRight: 25,
+    fontSize: 20,
+    color: '#696969',
+    background: 'white',
+    padding: 5,
+    borderRadius: 5,
   },
   button: {
     fontSize: 15,

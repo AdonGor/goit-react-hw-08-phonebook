@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as operations from '../../redux/phonebook-operations';
 import { getVisibleContacts } from '../../redux/phonebook-selectors';
-import s from './ContactList.module.css';
+import styles from './ContactList.module.css';
 
 function ContactList() {
 
@@ -11,16 +11,16 @@ function ContactList() {
   const onDeleteContact = id => dispatch(operations.deleteContact(id));
 
   return (
-    <ul className={s.list}>
+    <ul className={styles.list}>
       {contacts.map(({ id, name, number }) => (
-        <li key={id} className={s.item}>
-          <p className={s.text}>
+        <li key={id} className={styles.item}>
+          <p className={styles.text}>
             {name}: {number}
           </p>
           <button
             type="button"
             onClick={() => onDeleteContact(id)}
-            className={s.button}
+            className={styles.button}
           >
             Удалить
           </button>

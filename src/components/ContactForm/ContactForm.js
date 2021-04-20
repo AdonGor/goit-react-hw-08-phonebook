@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/phonebook-selectors';
 import { addContact } from '../../redux/phonebook-operations';
-import s from './ContactForm.module.css';
+import styles from './ContactForm.module.css';
 
 function ContactForm() {
 
@@ -45,8 +45,8 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={s.form}>
-      <label className={s.label}>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <label className={styles.label}>
         Имя:
           <input
           type="text"
@@ -54,11 +54,11 @@ function ContactForm() {
           value={name}
           placeholder="Пупа Еволюционируевичь"
           onChange={event => setName(event.currentTarget.value)}
-          className={s.input}
+          className={styles.input}
         />
       </label>
 
-      <label className={s.label}>
+      <label className={styles.label}>
         Номер:
           <input
           type="tel"
@@ -66,10 +66,10 @@ function ContactForm() {
           value={number}
           placeholder="000-000-000-000"
           onChange={event => setNumber(event.currentTarget.value)}
-          className={s.input}
+          className={styles.input}
         />
       </label>
-      <button type="submit" className={s.button}>
+      <button type="submit" className={styles.button}>
         Добавить
         </button>
     </form>

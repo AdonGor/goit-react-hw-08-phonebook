@@ -8,7 +8,6 @@ const styles = {
     fontSize:'20px',
     display: 'inline-block',
     textDecoration: 'none',
-    marginLeft:100,
     padding: 12,
     fontWeight: 700,
     color: '#696969',

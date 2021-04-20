@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from '../../redux/phonebook-selectors';
 import * as actions from '../../redux/phonebook-actions';
-import s from './Filter.module.css';
+import styles from './Filter.module.css';
 
 function Filter() {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ function Filter() {
     <label>
       <p>Найти контакт:</p>
       <input
-        className={s.input}
+        className={styles.input}
         type="text"
         value={value}
         onChange={change}

@@ -4,6 +4,7 @@ import authOperations from '../redux/auth/auth-operations';
 
 const styles = {
   form: {
+    margin: 'auto',
     width: 320,
   },
   label: {
@@ -47,8 +48,8 @@ export default function LoginView() {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = event => {
+    event.preventDefault();
     dispatch(authOperations.logIn({ email, password }));
     setEmail('');
     setPassword('');
@@ -56,8 +57,6 @@ export default function LoginView() {
 
   return (
     <div style={styles.section}>
-      <h1>:)</h1>
-
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="on">
         <label style={styles.label}>
           E-mail
